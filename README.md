@@ -31,7 +31,10 @@ This script will loop through all sites in `sites-to-auto-update.json` and:
 1. Don't fork this repository, instead clone it and [change the remote URL](https://help.github.com/articles/changing-a-remote-s-url/) to your own fresh GitHub repository and push the code there
 2. Update `backstop.template.json` to meet your needs, tweaking things like `viewport`
 3. Create a [CircleCI](https://circleci.com) project
-4. Add [environment variables to CircleCI](https://circleci.com/docs/environment-variables/) for the following:
+	* I'm trying a 2.0 project
+	* Click the gear in the upper right to access settings
+	* Under "Permissions", generate a new API token that has access to the whole project
+4. Add [environment variables to CircleCI](https://circleci.com/docs/environment-variables/) (also in settings under "Build Commands") for the following:
 	* `MULTIDEV`: The multidev name to use for applying/testing updates. Defaults to `update-wp`
 	* `CIRCLE_TOKEN`: A Circle CI API token with access to the project created in step 3.
 	* `TERMINUS_MACHINE_TOKEN`: A [Pantheon Terminus machine token](https://pantheon.io/docs/machine-tokens/) with access to the org above.
