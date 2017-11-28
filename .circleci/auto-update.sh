@@ -13,7 +13,7 @@ TERMINUS_DOES_MULTIDEV_EXIST()
     then
         return 1;
     fi
-    
+
     # Stash list of Pantheon multidev environments
     PANTHEON_MULTIDEV_LIST="$(terminus multidev:list -n ${SITE_NAME} --format=list --field=Name)"
 
@@ -98,29 +98,32 @@ else
     UPDATES_APPLIED=true
 fi
 
-# check for WordPress theme updates
-echo -e "\nChecking for WordPress theme updates on the ${MULTIDEV} multidev for $SITE_NAME..."
-THEME_UPDATES=$(terminus -n wp $SITE_UUID.$MULTIDEV -- theme list --update=available --format=count)
-echo $THEME_UPDATES
-
-if [[ "$THEME_UPDATES" == "0" ]]
-then
-    # no WordPress theme updates found
-    echo -e "\nNo WordPress theme updates found on the ${MULTIDEV} multidev for $SITE_NAME..."
-else
-    # update WordPress themes
-    echo -e "\nUpdating WordPress themes on the ${MULTIDEV} multidev for $SITE_NAME..."
-    terminus -n wp $SITE_UUID.$MULTIDEV -- theme update --all
-
-    # wake the site environment before committing code
-    echo -e "\nWaking the ${MULTIDEV} multidev..."
-    terminus env:wake $SITE_UUID.$MULTIDEV
-
-    # committing updated WordPress themes
-    echo -e "\nCommitting WordPress theme updates on the ${MULTIDEV} multidev for $SITE_NAME..."
-    terminus env:commit $SITE_UUID.$MULTIDEV --force --message="update WordPress themes"
-    UPDATES_APPLIED=true
-fi
+##
+## Commenting out this section because we don't want to update themes
+##
+# # check for WordPress theme updates
+# echo -e "\nChecking for WordPress theme updates on the ${MULTIDEV} multidev for $SITE_NAME..."
+# THEME_UPDATES=$(terminus -n wp $SITE_UUID.$MULTIDEV -- theme list --update=available --format=count)
+# echo $THEME_UPDATES
+#
+# if [[ "$THEME_UPDATES" == "0" ]]
+# then
+#     # no WordPress theme updates found
+#     echo -e "\nNo WordPress theme updates found on the ${MULTIDEV} multidev for $SITE_NAME..."
+# else
+#     # update WordPress themes
+#     echo -e "\nUpdating WordPress themes on the ${MULTIDEV} multidev for $SITE_NAME..."
+#     terminus -n wp $SITE_UUID.$MULTIDEV -- theme update --all
+#
+#     # wake the site environment before committing code
+#     echo -e "\nWaking the ${MULTIDEV} multidev..."
+#     terminus env:wake $SITE_UUID.$MULTIDEV
+#
+#     # committing updated WordPress themes
+#     echo -e "\nCommitting WordPress theme updates on the ${MULTIDEV} multidev for $SITE_NAME..."
+#     terminus env:commit $SITE_UUID.$MULTIDEV --force --message="update WordPress themes"
+#     UPDATES_APPLIED=true
+# fi
 
 if [[ "${UPDATES_APPLIED}" = false ]]
 then
