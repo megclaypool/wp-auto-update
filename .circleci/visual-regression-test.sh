@@ -29,7 +29,7 @@ curl -I "$LIVE_URL" >/dev/null
 if [ -f "$SITE_NAME.backstop.json" ] || [ -f "$SITE_NAME.backstop-config.js" ]; then
 
 	echo -e "\nCustom Backstop template $SITE_NAME.backstop.json or $SITE_NAME.backstop-config.js found for $SITE_NAME, skipping URL crawl..."
-	
+
 	if [ -f "$SITE_NAME.backstop.json" ]; then
 		cp "$SITE_NAME.backstop.json" backstop.json
 	fi
