@@ -1,51 +1,9 @@
 [
 	{
-		"SITE_UUID": "2758942e-e95f-4b36-bbcc-53c88ef12653",
-		"SITE_NAME": "american-rivers",
-		"CREATE_BACKUPS": 1,
-		"RECREATE_MULTIDEV": 1,
-		"LIVE_URL": "http://americanrivers.org"
-	},
-	{
 		"SITE_UUID": "c9c274bc-16d7-471c-aea1-cef91313116e",
 		"SITE_NAME": "cccdev",
 		"CREATE_BACKUPS": 1,
 		"RECREATE_MULTIDEV": 1,
 		"LIVE_URL": "http://contracosta.edu"
-	},
-	{
-		"SITE_UUID": "17aad1f7-b72d-456a-adc4-fa8f3a4d4b32",
-		"SITE_NAME": "habitat-california",
-		"CREATE_BACKUPS": 1,
-		"RECREATE_MULTIDEV": 1,
-		"LIVE_URL": "http://live-habitat-for-humanity-california.pantheonsite.io"
-	},
-	{
-		"SITE_UUID": "6d463ea4-a6e6-4993-bfdb-bad97e4b6012",
-		"SITE_NAME": "hfh-bay-area",
-		"CREATE_BACKUPS": 1,
-		"RECREATE_MULTIDEV": 1,
-		"LIVE_URL": "http://habitatba.org"
-	},
-	{
-		"SITE_UUID": "52c01258-dfe0-43c2-9699-5c2ddb65c018",
-		"SITE_NAME": "low-income-policy",
-		"CREATE_BACKUPS": 1,
-		"RECREATE_MULTIDEV": 1,
-		"LIVE_URL": "http://lowincomesolar.org"
-	},
-	{
-		"SITE_UUID": "f4e337c0-9490-4f37-8151-0ae294efe53a",
-		"SITE_NAME": "nicollet-island-coalition",
-		"CREATE_BACKUPS": 1,
-		"RECREATE_MULTIDEV": 1,
-		"LIVE_URL": "http://nicolletislandcoalition.org"
-	},
-	{
-		"SITE_UUID": "111833c0-2bf2-4d2c-8e0b-4e64db857a07",
-		"SITE_NAME": "oasis",
-		"CREATE_BACKUPS": 1,
-		"RECREATE_MULTIDEV": 1,
-		"LIVE_URL": "http://www.sfoasis.org"
 	}
 ]
